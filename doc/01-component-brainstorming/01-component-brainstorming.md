@@ -1,8 +1,8 @@
 # Portfolio Part 1: Component Brainstorming
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) then delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) then delete this comment -->
-- **Due Date**: <!-- TODO: fill with due date and time (e.g., 10/17 @ 3:10 PM EST) then delete this comment -->
+- **Name**: Wyatt Polinko<!-- TODO: fill with first and last name (e.g., Brutus Buckeye) then delete this comment -->
+- **Dot Number**: Polinko.7 <!-- TODO: fill with OSU dot number (e.g., buckeye.17) then delete this comment -->
+- **Due Date**: 2/6/26<!-- TODO: fill with due date and time (e.g., 10/17 @ 3:10 PM EST) then delete this comment -->
 
 ## Assignment Overview
 
@@ -211,49 +211,64 @@ will likely refine your design to make your implementation easier to use.
 
 > Please use this section to share your designs.
 
-- Component Design #1: <!-- TODO: give component a name then delete this comment -->
+- Component Design #1: Shipping System
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - I work for an LTL carrier aka a freight shipper, this component would model the system used, doors are containers holding freight information, enter freight information in, move freight from "door to door" have bays to move freight into aswell, move trailers (container) between set doors, and be able to pull "freight" to view information<!-- TODO:
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - Set addPro(String proNumber, String address, int doorLocation): creates a Set with an 8 digit number assigned, and a shipping address in a specified door.
+    - Set addDoor(int location): creates an empty door/trailer at terminal location
+    - void movePro(String proNumber, int fromDoor, int toDoor): adds the pro to the trailer at given location
+    - boolean containsPro(String proNumber): reports if the terminal contains the current pro
+
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - void editAdress(String proNumber): allows user to edit shipping adress
+    - void reportDamage(String proNumber): adds a note to the pro that it was damaged in transit
+    - int reportLocation(String proNumber): iterates through the terminal until it finds the pro's current location and returns it's door number
+    - set<String> prosAtDoor(int door): reports all pro's at the given location
+
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - yes as the pro and trailers must be moved and shipped
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - map.pair and set. map.pair<integer, set< Pro>> will be implemented internally as a terminal and can use the door numbers as keys, and the value at each door would be a set of pro numbers.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - yes, for constants, the max number of doors and max digits in a pro number would be fixed, for enums the Pros can only be at certain locations and have an address along with damaged or not
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - yes i believe so, reportLocation can iterate through all doors and checking which set contains a given pro. reportDamage looks up the pro and changes it's status, and editAddress pulls a pro and lets the address be changed.
 
-- Component Design #2: <!-- TODO: give component a name then delete this comment -->
+- Component Design #2: Sports Statistic Gambling Helper
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - I have made a similar ish program in python that pulls recent statistics on a basketball player and shows their success percentage on hitting different statistics in different categor, ie rebounds is 2, 4, 6, 8, 10 and shows percentage of times they hit each mark in their past 1, 2, 3, 5, 10 games ex: 2 rebounds in past: 1 games: 100%, 2 games: 100%, 3 games: 66%, 5 games: 80%, 10 games: 70%. (mySportsFeeds offers xml feeds and if i email them should be free for school/personal use. if not theres a few other sites offering xml feeds with subscriptions. )
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - void playerName(String name): loads the xml data for a choosen player.
+    - int gamesPlayed(): reports the number of games stored for the player
+    - int statInGame(int gameIndex, statCategory category): reports the stats of a valu in a given game.
+    void clearPlayer(): removes the current player data and resets so a new player can be loaded.
+
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - double hitRate(StatCategory category, int threshold, int gamesRange): reports the number of games in given range the player hit the threshhold
+    - map<Integer, Double> report(StatCategory category, int[] hits, int gamesRange): generates an array showing hit percentage for all thresholds.
+    - double average(StatCategory category, int gamesRange): shows the players average across a given game range
+    - boolean isHotStreak(StatCategory category, int threshold, int streak): reports if the player has hit a threshold for a set number of days.
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - yes as a new player must be loaded and data accesed
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - likely map.pair to hold stats with a given game.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - yes enum StatCategory { POINTS, REBOUNDS, ASSISTS, STEALS, BLOCKS} all stat categories used inside an enum.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - yes hitRate and average use statInGame to take the statistics
 
-- Component Design #3: <!-- TODO: give component a name then delete this comment -->
+- Component Design #3: if this is empty i never got around to it, but likely something with cooking and recipes.
   - **Description**:
     - <!-- TODO: describe your component then delete this comment -->
   - **Kernel Methods**:
