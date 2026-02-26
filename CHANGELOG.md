@@ -13,3 +13,16 @@ the following form: YYYY.0M.0D.
 - Designed a Shipping System component
 - Designed a Sports Statistic wink wink Helper component
 - Designed a cookbook component
+
+# Changelog
+
+## 2026.02.26
+
+### Added
+
+- Designed a proof of concept for shipping sytem component
+- honestly hastly done and will be changed in the coming week since i am now free of midterms for a month
+
+### Updated
+
+- Changed design to include ...
