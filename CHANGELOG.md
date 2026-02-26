@@ -12,4 +12,4 @@ the following form: YYYY.0M.0D.
 
 - Designed a Shipping System component
 - Designed a Sports Statistic wink wink Helper component
-- Designed a <!-- insert name of component 3 here --> component
+- Designed a cookbook component

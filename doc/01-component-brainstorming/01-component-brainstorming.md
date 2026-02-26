@@ -268,26 +268,32 @@ will likely refine your design to make your implementation easier to use.
       Answer, explain, and give at least one example:
       - yes hitRate and average use statInGame to take the statistics
 
-- Component Design #3: if this is empty i never got around to it, but likely something with cooking and recipes.
+- Component Design #3: cookbook.
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - I enjoy cooking but one issue with cooking is left over ingrediants. This component would log recipes and ingrediants, it would also allow the search up/ listing of recipes based on current ingrediants along with an option to sort recipes based on avaliable ingrediants, so you could use one that just needs you to purchase 1 ingrediant.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - void addIngrediant(String name); lets you add an ingrediant you have
+    - void addRecipe(String recipeName, Set<String> ingredients); lets you add a recipe
+    - boolean hasIngrediant(String name); reports if an ingredient is on hand
+    - Set<String> recipeIngredients(String recipeName); reports the recipe ingredients.
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - boolean canMakeRecipe(String recipeName): reports if the recipe can be made.
+    - set<String> missingIngredients(String recipeName): reports the missing ingredients.
+    - sequence<String> possibleRecipes(): reports the possible recipes to make.
+    - sequence<String> recipesSortedByMissingIngredients(): recipes sorted by amount of missing ingredients
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - yes as recipes and ingredients must be added to it
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - yes map<String, Set<String>> would be used to store recipes and their ingredients.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - could use an enum to sort by type of recipe with categories, breakfast, lunch, dinner, dessert.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - yes the kernal methods check the currently added recipes for their actions.
 
 ## Post-Assignment
 
